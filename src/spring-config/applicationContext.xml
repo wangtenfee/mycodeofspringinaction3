@@ -49,7 +49,7 @@
 		<bean id="auditorium" class=" _2wiringbean.sia.local.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"></bean>
 		
 		<!-- 2.2 Injecting into bean properties -->
-		<bean id="guiter" class=" _2wiringbean.sia.local.ImplInstrument">
+		<bean id="guiter" class=" _2wiringbean.sia.local.Guiter">
 			<property name="name" value="guiter"></property>
 		</bean>
 		<bean id="instrumentalist_wtf" class="_2wiringbean.sia.local.Instrumentalist">

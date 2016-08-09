@@ -1,6 +1,6 @@
 package _2wiringbean.sia.local;
 
-public class ImplInstrument implements Instrument{
+public class Guiter implements Instrument{
 
 	private String name;
 	
