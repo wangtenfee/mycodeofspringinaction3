@@ -5,12 +5,29 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
 	
-	@org.junit.Test
+	//@org.junit.Test
 	public void testPerformer() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		//Performer performer = (Performer)context.getBean("juggler"); 
 		Performer performer = (Performer)context.getBean("poeticJuggler");
 		performer.perform();
+	}
+	
+	
+	//test bean scope
+	@org.junit.Test
+	public void testBeanScope() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		//Performer performer = (Performer)context.getBean("juggler"); 
+		BeanSingleton beanSingleton1 = (BeanSingleton)context.getBean("beanSingleton");
+		BeanSingleton beanSingleton2 = (BeanSingleton)context.getBean("beanSingleton");
+		BeanPrototype beanPrototype1 = (BeanPrototype)context.getBean("beanPrototype");
+		BeanPrototype beanPrototype2 = (BeanPrototype)context.getBean("beanPrototype");
+		
+		System.out.println(beanSingleton1);
+		System.out.println(beanSingleton2);
+		System.out.println(beanPrototype1);
+		System.out.println(beanPrototype2);		
 	}
 	
 

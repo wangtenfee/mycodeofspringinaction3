@@ -41,4 +41,9 @@
 			<constructor-arg name="poem" ref="sonnet29"></constructor-arg>
 			<constructor-arg name="beanBags" value="29"></constructor-arg>
 		</bean>
+		
+		<bean id="stage" class=" _2wiringbean.sia.local.Stage" factory-method="getInstance"></bean>
+		<!-- test bean scope -->
+		<bean id="beanSingleton" class="_2wiringbean.sia.local.BeanSingleton" scope="singleton"></bean>
+		<bean id="beanPrototype" class="_2wiringbean.sia.local.BeanPrototype" scope="prototype"></bean>
 </beans>
