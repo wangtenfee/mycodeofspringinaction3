@@ -7,7 +7,7 @@ public class PoeticJuggler extends Juggler{
 	
 	@Override
 	public void perform() {
-		super.perform();
+		super.perform();   
 		poem.recite();
 	}
 
