@@ -15,7 +15,7 @@ public class Test {
 	
 	
 	//test bean scope
-	@org.junit.Test
+	//@org.junit.Test
 	public void testBeanScope() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		//Performer performer = (Performer)context.getBean("juggler"); 
@@ -30,5 +30,14 @@ public class Test {
 		System.out.println(beanPrototype2);		
 	}
 	
+	//test init-method && destory-method
+	@org.junit.Test
+	public void testInitAndDestory() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		for(int i=0;i<1;i++){
+			Auditorium auditorium = (Auditorium)context.getBean("auditorium");
+		}
+		System.gc();
+	}
 
 }

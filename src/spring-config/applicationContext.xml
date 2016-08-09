@@ -46,4 +46,5 @@
 		<!-- test bean scope -->
 		<bean id="beanSingleton" class="_2wiringbean.sia.local.BeanSingleton" scope="singleton"></bean>
 		<bean id="beanPrototype" class="_2wiringbean.sia.local.BeanPrototype" scope="prototype"></bean>
+		<bean id="auditorium" class=" _2wiringbean.sia.local.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"></bean>
 </beans>
