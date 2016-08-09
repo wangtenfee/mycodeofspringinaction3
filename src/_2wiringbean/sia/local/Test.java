@@ -35,7 +35,7 @@ public class Test {
 	public void testInitAndDestory() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		for(int i=0;i<1;i++){
-			Auditorium auditorium = (Auditorium)context.getBean("auditorium");
+			Auditorium auditorium = (Auditorium)context.getBean("auditorium"); 
 		}
 		System.gc();
 	}
