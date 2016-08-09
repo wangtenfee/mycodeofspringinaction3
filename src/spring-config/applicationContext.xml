@@ -47,4 +47,13 @@
 		<bean id="beanSingleton" class="_2wiringbean.sia.local.BeanSingleton" scope="singleton"></bean>
 		<bean id="beanPrototype" class="_2wiringbean.sia.local.BeanPrototype" scope="prototype"></bean>
 		<bean id="auditorium" class=" _2wiringbean.sia.local.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"></bean>
+		
+		<!-- 2.2 Injecting into bean properties -->
+		<bean id="guiter" class=" _2wiringbean.sia.local.ImplInstrument">
+			<property name="name" value="guiter"></property>
+		</bean>
+		<bean id="instrumentalist_wtf" class="_2wiringbean.sia.local.Instrumentalist">
+			<property name="instrument" ref="guiter"></property>
+			<property name="song" value="Welcome to New York"></property>
+		</bean>
 </beans>

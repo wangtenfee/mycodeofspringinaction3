@@ -31,7 +31,7 @@ public class Test {
 	}
 	
 	//test init-method && destory-method
-	@org.junit.Test
+	//@org.junit.Test
 	public void testInitAndDestory() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		for(int i=0;i<1;i++){
@@ -40,4 +40,12 @@ public class Test {
 		System.gc();
 	}
 
+	//<!-- 2.2 Injecting into bean properties -->
+	@org.junit.Test
+	public void testInstrumentalist() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Instrumentalist instrumentalist = (Instrumentalist)context.getBean("instrumentalist_wtf");
+		instrumentalist.perform();
+
+	}
 }
