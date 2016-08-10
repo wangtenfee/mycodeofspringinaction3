@@ -11,7 +11,7 @@ public class Guiter implements Instrument{
 
 	@Override
 	public void play() {
-		System.out.println("ImplInstrument:"+this.name+"is playing....");		
+		System.out.println("excuting Instrument.play()"+this.name+" is playing....");		
 	}
 
 }

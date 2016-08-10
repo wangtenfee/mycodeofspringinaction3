@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context 
@@ -46,7 +48,7 @@
 		<!-- test bean scope -->
 		<bean id="beanSingleton" class="_2wiringbean.sia.local.BeanSingleton" scope="singleton"></bean>
 		<bean id="beanPrototype" class="_2wiringbean.sia.local.BeanPrototype" scope="prototype"></bean>
-		<bean id="auditorium" class=" _2wiringbean.sia.local.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"></bean>
+<!-- 		<bean id="auditorium" class=" _2wiringbean.sia.local.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"></bean> -->
 		
 		<!-- 2.2 Injecting into bean properties -->
 		<bean id="guiter" class=" _2wiringbean.sia.local.Guiter">
@@ -56,4 +58,14 @@
 			<property name="instrument" ref="guiter"></property>
 			<property name="song" value="Welcome to New York"></property>
 		</bean>
+		<!-- 2.2.3 Wiring properties with Spring’s p namespace -->
+		<bean id="guiter1" class=" _2wiringbean.sia.local.Guiter" 
+			p:name="guiter1"
+		>	
+		</bean>
+		<bean id="instrumentalist_wtf1" class="_2wiringbean.sia.local.Instrumentalist"
+			p:song="guiter1"
+			p:instrument-ref="guiter1"
+		>
+		</bean>		
 </beans>

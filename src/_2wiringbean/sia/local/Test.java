@@ -41,10 +41,19 @@ public class Test {
 	}
 
 	//<!-- 2.2 Injecting into bean properties -->
-	@org.junit.Test
+	//@org.junit.Test
 	public void testInstrumentalist() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		Instrumentalist instrumentalist = (Instrumentalist)context.getBean("instrumentalist_wtf");
+		instrumentalist.perform();
+
+	}
+	
+	//<!-- 2.2.3 Wiring properties with Spring¡¯s p namespace -->
+	@org.junit.Test
+	public void testInstrumentalistP() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Instrumentalist instrumentalist = (Instrumentalist)context.getBean("instrumentalist_wtf1");
 		instrumentalist.perform();
 
 	}
