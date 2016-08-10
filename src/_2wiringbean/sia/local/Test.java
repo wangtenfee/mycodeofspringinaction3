@@ -50,11 +50,36 @@ public class Test {
 	}
 	
 	//<!-- 2.2.3 Wiring properties with Spring¡¯s p namespace -->
-	@org.junit.Test
+	//@org.junit.Test
 	public void testInstrumentalistP() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		Instrumentalist instrumentalist = (Instrumentalist)context.getBean("instrumentalist_wtf1");
-		instrumentalist.perform();
+		instrumentalist.perform();	
 
 	}
+	//<!-- 2.2.4 Wiring collections -->
+	//@org.junit.Test
+	public void testInstrumentalistCollection() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("oneManBand");
+		performer.perform();
+
+	}
+	//Wiring Map
+	//@org.junit.Test
+	public void testInstrumentalistMap() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("oneManBandMap");
+		performer.perform();
+
+	}
+	//Wiring props
+	@org.junit.Test
+	public void testInstrumentalistProps() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("OneManBandProps");
+		performer.perform();
+
+	}
+	
 }

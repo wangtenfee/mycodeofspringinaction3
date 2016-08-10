@@ -67,5 +67,39 @@
 			p:song="guiter1"
 			p:instrument-ref="guiter1"
 		>
-		</bean>		
+		</bean>	
+		
+		<!-- 2.2.4 Wiring collections -->
+		<bean id="woodwinds" class="_2wiringbean.sia.local.Woodwinds" />
+		<bean id="sopranoRecorder" class="_2wiringbean.sia.local.SopranoRecorder" />
+		<bean id="contrabassoon" class="_2wiringbean.sia.local.Contrabassoon" />
+		<bean id="oneManBand" class="_2wiringbean.sia.local.OneManBand">
+			<property name="instruments">
+				<list>
+				<ref bean="woodwinds" />
+				<ref bean="sopranoRecorder" />
+				<ref bean="contrabassoon"/>
+				</list>
+			</property>
+		</bean>
+		<!-- Wiring Map -->
+		<bean id="oneManBandMap" class="_2wiringbean.sia.local.OneManBandMap">
+			<property name="instrumentMap">
+				<map>
+					<entry key="instrment1" value-ref="woodwinds"></entry>
+					<entry key="instrment2" value-ref="sopranoRecorder"></entry>
+					<entry key="instrment3" value-ref="contrabassoon"></entry>
+				</map>
+			</property>
+		</bean>
+		<!-- wiring props -->
+		<bean id="OneManBandProps" class=" _2wiringbean.sia.local.OneManBandProps">
+			<property name="instrumentProps">
+				<props>
+					<prop key="GUITAR">STRUM STRUM STRUM</prop>
+					<prop key="CYMBAL">CRASH CRASH CRASH</prop>
+					<prop key="HARMONICA">HUM HUM HUM</prop>
+				</props>
+			</property>
+		</bean>
 </beans>
