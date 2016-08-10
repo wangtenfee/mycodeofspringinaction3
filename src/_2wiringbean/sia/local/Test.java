@@ -74,10 +74,18 @@ public class Test {
 
 	}
 	//Wiring props
-	@org.junit.Test
+	//@org.junit.Test
 	public void testInstrumentalistProps() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		Performer performer = (Performer)context.getBean("OneManBandProps");
+		performer.perform();
+
+	}
+	//<!-- 2.3.1 Expressing SpEL fundamentals -->
+	@org.junit.Test
+	public void testBeanForSpel() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("beanforspel");
 		performer.perform();
 
 	}

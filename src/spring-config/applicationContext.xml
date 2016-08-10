@@ -102,4 +102,15 @@
 				</props>
 			</property>
 		</bean>
+		<!-- 2.3.1 Expressing SpEL fundamentals -->
+		<bean id="beanforspel" class=" _2wiringbean.sia.local.BeanForSpel">
+			<property name="count" value="#{5}"></property>
+			<property name="messgage" value="this is #{'wtf'}"></property>
+			<property name="frequency" value="#{89.4}"></property>
+			<property name="capacity" value="#{1e4}"></property>
+			<property name="name" value="#{'wtf'}"></property>
+			<property name="enabled" value="#{false}"></property>
+			<property name="song" value="#{instrumentalist_wtf.song}"></property>
+			<property name="instrument" value="#{woodwinds}"></property>
+		</bean>
 </beans>
