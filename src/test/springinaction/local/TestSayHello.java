@@ -1,5 +1,6 @@
 package test.springinaction.local;
 
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,5 +11,11 @@ public class TestSayHello {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		HelloSpring helloSpring = (HelloSpring)context.getBean("hellospring");
 		helloSpring.sayHello();
+		System.out.println(java.lang.Math.PI);
+	}
+	
+	@Test
+	public void testPi() {
+		System.out.println(java.lang.Math.PI);
 	}
 }

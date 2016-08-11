@@ -113,4 +113,6 @@
 			<property name="song" value="#{instrumentalist_wtf.song}"></property>
 			<property name="instrument" value="#{woodwinds}"></property>
 		</bean>
+		<!-- 2.3.2 Performing operations on SpEL values -->
+		
 </beans>
