@@ -24,20 +24,20 @@ public class BeanForSpelOperation implements Performer{
 	private String validEmail;//<property name="validEmail" value="#{admin.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}"/>
 	@Override
 	public void perform() {
-		System.out.println("this.:"+this.adjustedAmount);
-		System.out.println("this.:"+this.adjustedAmount2);
-		System.out.println("this.:"+this.circumference);
-		System.out.println("this.:"+this.average);
-		System.out.println("this.:"+this.remainder);
-		System.out.println("this.:"+this.fullName);
-		System.out.println("this.:"+this.equal);
-		System.out.println("this.:"+this.hasCapacity);
-		System.out.println("this.:"+this.largeCircle);
-		System.out.println("this.:"+this.outOfStock);
-		System.out.println("this.:"+this.outOfStock2);
-		System.out.println("this.:"+this.song);
-		System.out.println("this.:"+this.song2);
-		System.out.println("this.:"+this.validEmail);		
+		System.out.println("this.adjustedAmount:"+this.adjustedAmount);
+		System.out.println("this.adjustedAmount2:"+this.adjustedAmount2);
+		System.out.println("this.circumference:"+this.circumference);
+		System.out.println("this.average:"+this.average);
+		System.out.println("this.remainder:"+this.remainder);
+		System.out.println("this.fullName:"+this.fullName);
+		System.out.println("this.equal:"+this.equal);
+		System.out.println("this.hasCapacity:"+this.hasCapacity);
+		System.out.println("this.largeCircle:"+this.largeCircle);
+		System.out.println("this.outOfStock:"+this.outOfStock);
+		System.out.println("this.outOfStock2:"+this.outOfStock2);
+		System.out.println("this.song:"+this.song);
+		System.out.println("this.song2:"+this.song2);
+		System.out.println("this.validEmail:"+this.validEmail);		
 		
 		
 	}

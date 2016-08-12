@@ -82,12 +82,29 @@ public class Test {
 
 	}
 	//<!-- 2.3.1 Expressing SpEL fundamentals -->
-	@org.junit.Test
+	//@org.junit.Test
 	public void testBeanForSpel() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		Performer performer = (Performer)context.getBean("beanforspel");
 		performer.perform();
 
+	}
+	//<!-- 2.3.2 Performing operations on SpEL values -->
+	//@org.junit.Test
+	public void testBeanForSpelOperation() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("beanForSpelOperation");
+		performer.perform();
+	}
+	
+	//beanForCollectionInSpel
+	//!-- 2.3.3 Sifting through collections in SpEL -->
+	@org.junit.Test
+	public void beanForCollectionInSpel() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		Performer performer = (Performer)context.getBean("beanForCollectionInSpel");
+		performer.perform();
+		
 	}
 	
 }

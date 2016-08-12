@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.springframework.org/schema/context 
-       http://www.springframework.org/schema/context/spring-context-3.0.xsd
-       http://www.springframework.org/schema/tx 
-       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-       http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
    
    <!-- _1_1intro.sia.local  -->    
        <bean id="minstrel" class="_1intro.sia.local.Minstrel" />
@@ -114,5 +112,70 @@
 			<property name="instrument" value="#{woodwinds}"></property>
 		</bean>
 		<!-- 2.3.2 Performing operations on SpEL values -->
+		<bean id="counter" class="_2wiringbean.sia.local.Counter">
+			<property name="total" value="#{5}"></property>
+			<property name="count" value="#{10}"></property>
+		</bean>
+		<bean id="circle" class="_2wiringbean.sia.local.Circle">
+			<property name="radius" value="#{3.55}"></property>
+		</bean>
+		<bean id="performer" class=" _2wiringbean.sia.local.PerformerX">
+			<property name="firstName" value="#{'tf'}"></property>
+			<property name="lastName" value="#{'w'}"></property>
+		</bean>
+		<bean id="shape" class="_2wiringbean.sia.local.Shape">
+			<property name="kind" value="#{'circle'}"></property>
+			<property name="perimeter" value="#{10001}"></property>
+		</bean>
+		<bean id="product" class=" _2wiringbean.sia.local.Product">
+			<property name="available" value="#{true}"></property>
+		</bean>
+		<bean id="admin" class="_2wiringbean.sia.local.Admin">
+			<property name="email" value="x@a.com"></property>
+		</bean>
+		<bean id="beanForSpelOperation" class="_2wiringbean.sia.local.BeanForSpelOperation">
+			<property name="adjustedAmount" value="#{counter.total + 42}"/>
+			<property name="adjustedAmount2" value="#{counter.total - 20}"/>
+			<property name="circumference"  value="#{2 * T(java.lang.Math).PI * circle.radius}"/>
+			<property name="average" value="#{counter.total / counter.count}"/>
+			<property name="remainder" value="#{counter.total % counter.count}"/>
+			<property name="fullName"	value="#{performer.firstName + ' ' + performer.lastName}"/>
+			<property name="equal" value="#{counter.total == 100}"/>
+			<property name="hasCapacity" value="#{counter.total le 100000}"/>
+			<property name="largeCircle"	value="#{shape.kind == 'circle' and shape.perimeter gt 10000}"/>
+			<property name="outOfStock" value="#{!product.available}"/>
+			<property name="outOfStock2" value="#{not product.available}"/>
+			<property name="song" 	value="#{instrumentalist_wtf1.song != null ? instrumentalist_wtf1.song : 'Greensleeves'}"/>
+			<property name="song2" value="#{instrumentalist_wtf1.song ?: 'Greensleeves'}"/>
+			<property name="validEmail" value="#{admin.email matches '[a-zA-Z0-9]@[a-zA-Z0-9]\.com'}"/>
+		</bean>
+		<!-- 2.3.3 Sifting through collections in SpEL -->
+		<util:list id="cities">
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Chicago" p:state="IL" p:population="2853114"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Atlanta" p:state="GA" p:population="537958"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Dallas" p:state="TX" p:population="1279910"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Houston" p:state="TX" p:population="2242193"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Odessa" p:state="TX" p:population="90943"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="El Paso" p:state="TX" p:population="613190"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Jal" p:state="NM" p:population="1996"/>
+			<bean class="_2wiringbean.sia.local.City"
+			p:name="Las Cruces" p:state="NM" p:population="91865"/>
+		</util:list>
+		<util:properties id="settings" location="classpath:properties-files/settings.properties"/>
+		<bean id="beanForCollectionInSpel" class="_2wiringbean.sia.local.BeanForCollectionInSpel">
+			<property name="chosenCity" value="#{cities[2]}"/>
+			<property name="chosenCity2" value="#{cities[T(java.lang.Math).random() % cities.size()]}"/>
+<!-- 			<property name="chosenCity3" value="#{cities['Dallas']}"/> -->
+			<property name="accessToken" value="#{settings['twitter.accessToken']}"/>
+			<property name="jdkHome" value="#{systemEnvironment['JAVA_HOME']}"/>			
+		</bean>
+		
 		
 </beans>
