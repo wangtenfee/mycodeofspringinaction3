@@ -172,10 +172,10 @@
 		<bean id="beanForCollectionInSpel" class="_2wiringbean.sia.local.BeanForCollectionInSpel">
 			<property name="chosenCity" value="#{cities[2]}"/>
 			<property name="chosenCity2" value="#{cities[T(java.lang.Math).random() % cities.size()]}"/>
-<!-- 			<property name="chosenCity3" value="#{cities['Dallas']}"/> -->
+<!-- 			<property name="chosenCity3" value="#{cities['Dallas']}"/> map才能用-->
 			<property name="accessToken" value="#{settings['twitter.accessToken']}"/>
 			<property name="jdkHome" value="#{systemEnvironment['JAVA_HOME']}"/>			
 		</bean>
-		
+
 		
 </beans>

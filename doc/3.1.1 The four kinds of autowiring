@@ -1,0 +1,5 @@
+When it comes to automatically wiring beans with their dependencies, Spring has a lotof clues to work from. As a result, Spring provides four flavors of autowiring:
+ byName—Attempts to match all properties of the autowired bean with beans that have the same name (or ID) as the properties. Properties for which there’s no matching bean will remain unwired.
+ byType—Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which there’s no matching bean will remain unwired.
+ constructor—Tries to match up a constructor of the autowired bean with beans whose types are assignable to the constructor arguments.
+ autodetect—Attempts to apply constructor autowiring first. If that fails, byType will be tried.
