@@ -10,7 +10,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+		default-autowire="byType"><!-- 3.1.2 Default autowiring -->
+		<context:annotation-config />
    
    		<!-- 3.1.1 The four kinds of autowiring -->
    		<!-- autowire byName -->
@@ -35,4 +37,9 @@
 <!-- 			<constructor-arg name="poem" ref="sonnet29"></constructor-arg> -->
 			<constructor-arg name="beanBags" value="29"></constructor-arg>
 		</bean>
+		
+		<!-- 3.2.1 Using @Autowired -->
+		<bean id="beanForAnnotationOfInstrument" class="_3miniconfig.sia.local.BeanForAnnotationOfInstrument"></bean>
+		<bean id="beanForAnnotation" class=" _3miniconfig.sia.local.BeanForAnnotation"></bean>
+		
 </beans>

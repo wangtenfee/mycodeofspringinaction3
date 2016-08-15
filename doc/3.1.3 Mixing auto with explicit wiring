@@ -1,0 +1,6 @@
+明确地指定注入的对象 大于 自动注入default-autowire="byType" 自动注入又 大于 默认自动注入default-autowire="byType"
+<property name="instrument" ref="saxophone">
+>
+default-autowire="byType"
+>
+default-autowire="byType"

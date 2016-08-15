@@ -1,0 +1,8 @@
+注解注入不是spring容器的默认行为，因为注解注入需要指定作用域。
+在spring命名空间里加入下面这行元素
+<context:annotation-config>
+<!-- bean declarations go here -->
+spring支持下面三种注解方式
+Spring’s own @Autowired annotation
+The @Inject annotation from JSR-330
+The @Resource annotation from JSR-250
