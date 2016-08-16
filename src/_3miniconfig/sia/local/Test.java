@@ -22,10 +22,33 @@ public class Test {
 	}
 	
 	//autowire byType
-	@org.junit.Test
+	//@org.junit.Test
 	public void testAutowireConstrator() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext_3miniconfig.xml");
 		Performer performer = (Performer)context.getBean("poeticJuggler");
+		performer.perform();
+	}
+	//annotation autowire
+	//@org.junit.Test
+	public void testAnnotationWired() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext-321annotationnew.xml");
+		Performer performer = (Performer)context.getBean("beanAnnotation");
+		performer.perform();
+	}	
+	
+	//annotation inject
+	//@org.junit.Test
+	public void testInject() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext-321annotationnew.xml");
+		Performer performer = (Performer)context.getBean("beanForInject");
+		performer.perform();
+	}		
+	
+	//annotation inject
+	@org.junit.Test
+	public void testComponent() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext-33AutomaticallyDiscoveringBeans.xml");
+		Performer performer = (Performer)context.getBean("beanForComponent");
 		performer.perform();
 	}
 }

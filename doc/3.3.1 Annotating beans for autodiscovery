@@ -1,0 +1,6 @@
+@Component—A general-purpose stereotype annotation indicating that the class
+is a Spring component
+ @Controller—Indicates that the class defines a Spring MVC controller
+ @Repository—Indicates that the class defines a data repository
+ @Service—Indicates that the class defines a service
+ Any custom annotation that is itself annotated with @Component

@@ -28,5 +28,7 @@
 	<classpathentry kind="lib" path="lib/aopalliance-alpha1.jar"/>
 	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/aspectjweaver-1.6.12.jar"/>
+	<classpathentry kind="lib" path="lib/javax.annotation.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

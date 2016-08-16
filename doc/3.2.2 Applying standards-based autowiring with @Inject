@@ -1,0 +1,2 @@
+@Inject 与 @Autowired 类似，不过@Inject是属于JCP标准的。需要另外再下载jar文件
+但是@inject没有(required=false)这一说。因此该修饰符对应的属性必须有对应类型的bean声明。
