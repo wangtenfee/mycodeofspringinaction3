@@ -1,0 +1,8 @@
+通过注解注入需要配合<context:annotation-config />使用，该元素需要写入spring上下文中。
+@Autowired 本质上是按byType匹配Bean的。强制性约束容器中有且只有一个对应类型的Bean声明。
+用@Autowired(required=false)可以消除该强制性约束，即窗口中没有对应类型的Bean声明，也能通过，不过有可能在运行时报空指针异常
+@Qualifier("beanAnnotationInstrumentx") Qualifier表示预选赛；（击败对手可进入某竞赛的）合格者；资格赛；外围赛
+
+下面这样用会注入失败。(required=false)会失败。
+	@Autowired(required=false)
+	@Qualifier("beanAnnotationInstrumentx")

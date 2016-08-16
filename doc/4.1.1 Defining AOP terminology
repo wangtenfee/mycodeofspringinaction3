@@ -1,0 +1,12 @@
+advice, pointcuts, and join points.
+
+the job of an aspect is called advice.
+	Advice defines both the what and the when of an aspect. 
+	Spring aspects can work with five kinds of advice:
+	 Before—The advice functionality takes place before the advised method is invoked.
+	 After—The advice functionality takes place after the advised method completes, regardless of the outcome.
+	 After-returning—The advice functionality takes place after the advised method successfully completes.
+	 After-throwing—The advice functionality takes place after the advised method throws an exception.
+	 Around—The advice wraps the advised method, providing some functionality before and after the advised method is invoked.
+	In the same way, your application may have thousands of opportunities for advice to be applied. These opportunities are known as join points. A join point is a point in he execution of the application where an aspect can be plugged in.
+	If advice defines the what and when of aspects, then pointcuts define the where.  
