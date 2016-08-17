@@ -13,6 +13,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
    
    <bean id="audience" class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.Audience"></bean>
+   <!--  
   <aop:config>
   	<aop:aspect ref="audience">
   		<aop:before method="takeSeats" pointcut="execution(* local.sia._2wiringbean.Performer.perform(..))"/>
@@ -21,11 +22,48 @@
   		<aop:after-throwing method="demandRefund" pointcut="execution(* local.sia._2wiringbean.Performer.perform(..))"/>
   	</aop:aspect>
   </aop:config>
+  	-->
+  	<!-- modified the  <aop:config>   -->
+  	<!-- 
+  	<aop:config>
+  		<aop:aspect ref="audience">
+  			<aop:pointcut expression="execution(* local.sia._2wiringbean.Performer.perform(..))" id="performance"/>
+  			<aop:before method="takeSeats" pointcut-ref="performance"/>
+  			<aop:before method="turnOffCellPhones" pointcut-ref="performance"/>
+  			<aop:after-returning method="applaud" pointcut-ref="performance"/>
+  			<aop:after-throwing method="demandRefund" pointcut-ref="performance"/>
+  		</aop:aspect>
+  	</aop:config>
+  	-->
+  	<!-- <aop:around> -->
+  	<aop:config>
+  		<aop:aspect ref="audience">
+  			<aop:pointcut expression="execution(* local.sia._2wiringbean.Performer.perform(..))" id="performance"/>
+  			<aop:around method="watchPerformance" pointcut-ref="performance"/>
+  		</aop:aspect>
+  	</aop:config>
   
 	<bean id="beanForAspect" class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.BeanForAspect">
 		<property name="instrument">
 			<bean class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.BeanForAspectInstrument"></bean>
+			<!-- invoke and test <aop:after-throwing method="demandRefund" pointcut-ref="performance"/> 
+				if you want invoke and test the aop:after-throwing,you can`t try catch the Exception.if you did, spring will invoke the  <aop:after-returning>-->
+<!-- 			 <null></null> -->	
 		</property>
 	</bean>
+	
+	<!-- 4.3.3 Passing parameters to advice -->
+	<bean id="magician" class="local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Magician"></bean>
+	<aop:config>
+		<aop:aspect ref="magician">
+			<aop:pointcut 
+			expression="execution(* local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Thinker.thinkOfSomething(String) and args(thoughts)" 
+			id="thinking"/>
+			<aop:before	pointcut-ref="thinking" method="interceptThoughts" arg-names="thoughts" />
+		</aop:aspect>	
+	</aop:config>
+	
+	
 		
+	
 </beans>

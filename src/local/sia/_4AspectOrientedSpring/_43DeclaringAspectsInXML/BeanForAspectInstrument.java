@@ -6,7 +6,6 @@ public class BeanForAspectInstrument implements Instrument{
 
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
 		System.out.println("BeanForAspectInstrument is playing....");
 	}
 

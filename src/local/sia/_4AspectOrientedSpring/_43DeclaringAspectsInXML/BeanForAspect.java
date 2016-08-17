@@ -17,8 +17,10 @@ public class BeanForAspect implements Performer{
 
 	@Override
 	public void perform() {
-		this.instrument.play();
-		
+			this.instrument.play();	
 	}
+
+
+
 
 }
