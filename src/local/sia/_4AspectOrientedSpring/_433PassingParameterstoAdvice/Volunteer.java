@@ -10,8 +10,8 @@ public class Volunteer implements Thinker {
 		
 	}
 
-	public void setThoughts(String thoughts) {
-		this.thoughts = thoughts;
+	public String getThoughts() {
+		return this.thoughts;
 	}
 
 	
