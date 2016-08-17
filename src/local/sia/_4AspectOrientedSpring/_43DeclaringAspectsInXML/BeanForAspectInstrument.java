@@ -1,4 +1,4 @@
-package local.sia._4AspectOrientedSpring;
+package local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML;
 
 import local.sia._2wiringbean.Instrument;
 

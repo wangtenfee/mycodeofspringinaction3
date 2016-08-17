@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
    
-   <bean id="audience" class="local.sia._4AspectOrientedSpring.Audience"></bean>
+   <bean id="audience" class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.Audience"></bean>
   <aop:config>
   	<aop:aspect ref="audience">
   		<aop:before method="takeSeats" pointcut="execution(* local.sia._2wiringbean.Performer.perform(..))"/>
@@ -22,9 +22,9 @@
   	</aop:aspect>
   </aop:config>
   
-	<bean id="beanForAspect" class="local.sia._4AspectOrientedSpring.BeanForAspect">
+	<bean id="beanForAspect" class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.BeanForAspect">
 		<property name="instrument">
-			<bean class="local.sia._4AspectOrientedSpring.BeanForAspectInstrument"></bean>
+			<bean class="local.sia._4AspectOrientedSpring._43DeclaringAspectsInXML.BeanForAspectInstrument"></bean>
 		</property>
 	</bean>
 		
