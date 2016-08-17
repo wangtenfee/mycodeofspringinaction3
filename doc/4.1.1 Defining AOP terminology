@@ -10,3 +10,9 @@ the job of an aspect is called advice.
 	 Around—The advice wraps the advised method, providing some functionality before and after the advised method is invoked.
 	In the same way, your application may have thousands of opportunities for advice to be applied. These opportunities are known as join points. A join point is a point in he execution of the application where an aspect can be plugged in.
 	If advice defines the what and when of aspects, then pointcuts define the where.  
+	
+execution(* com.springinaction.springidol.Instrument.play())and bean(eddie)
+Here we’re saying that we want to apply aspect advice to the execution of an Instruments play() method, but limited to the bean whose ID is eddie. 
+Narrowing a pointcut to a specific bean may be valuable in some cases, but we can also use negation to apply an aspect to all beans that don’t have a specific ID: 
+execution(* com.springinaction.springidol.Instrument.play()) and !bean(eddie)
+	
