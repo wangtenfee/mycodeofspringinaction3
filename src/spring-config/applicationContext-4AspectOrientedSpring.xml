@@ -54,13 +54,15 @@
 	
 	<!-- 4.3.3 Passing parameters to advice -->
 	<bean id="magician" class="local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Magician"></bean>
-	<bean id="volunteer" class=" local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Volunteer"></bean>
+	<bean id="volunteer" class=" local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Volunteer">
+		<property name="thoughts" value="#{'fuck the world!!!'}"></property>
+	</bean>
 	<aop:config>
 		<aop:aspect ref="magician">
 			<aop:pointcut id="Volunteer"
-			expression="execution(* local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Thinker.thinkOfSomething(String)) and args(thoughts)" 
+			expression="execution(* local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Thinker.setThoughts(String)) and args(thoughts)" 
 			/>
-			<aop:before	pointcut-ref="Volunteer" method="interceptThoughts" arg-names="thoughts" />
+			<aop:after	pointcut-ref="Volunteer" method="interceptThoughts" arg-names="thoughts" />
 		</aop:aspect>	
 	</aop:config>
 	

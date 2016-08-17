@@ -13,6 +13,17 @@ public class Volunteer implements Thinker {
 	public String getThoughts() {
 		return this.thoughts;
 	}
+	@Override
+	public void setThoughts(String thoughts) {
+		this.thoughts = thoughts;
+	}
 
+	@Override
+	public void sayMyThoughts() {
+		System.out.println(this.thoughts);
+		
+	}
+
+	
 	
 }

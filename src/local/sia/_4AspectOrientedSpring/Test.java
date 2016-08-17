@@ -24,7 +24,9 @@ public class Test {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext-4AspectOrientedSpring.xml");
 		MindReader mindReader = (MindReader)context.getBean("magician");
 		Thinker thinker  = (Thinker)context.getBean("volunteer");
-		thinker.thinkOfSomething("Queen of Hearts");
+		//thinker.thinkOfSomething("Queen of Hearts");
+		thinker.setThoughts("wtf");//这里必须明确调用execution(* local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Thinker.setThoughts(String))中使用的方法setThoughts才可以，不能用注入的方式
+		//thinker.sayMyThoughts();
 		//Assert("Queen of Hearts", magician.getThoughts());
 		System.out.println(mindReader.getThoughts());
 	}
