@@ -29,6 +29,6 @@ public class Test {
 		//thinker.sayMyThoughts();
 		//Assert("Queen of Hearts", magician.getThoughts());
 		System.out.println(mindReader.getThoughts());
-	}
+	} 
 	
 }
