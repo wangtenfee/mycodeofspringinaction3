@@ -23,7 +23,4 @@ public class Volunteer implements Thinker {
 		System.out.println(this.thoughts);
 		
 	}
-
-	
-	
 }
