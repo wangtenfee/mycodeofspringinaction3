@@ -33,9 +33,9 @@ public class Test {
 	//test init-method && destory-method
 	//@org.junit.Test
 	public void testInitAndDestory() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
+		//ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");
 		for(int i=0;i<1;i++){
-			Auditorium auditorium = (Auditorium)context.getBean("auditorium"); 
+			//Auditorium auditorium = (Auditorium)context.getBean("auditorium"); 
 		}
 		System.gc();
 	}
@@ -49,7 +49,7 @@ public class Test {
 
 	}
 	
-	//<!-- 2.2.3 Wiring properties with Spring¡¯s p namespace -->
+	//<!-- 2.2.3 Wiring properties with Springï¿½ï¿½s p namespace -->
 	//@org.junit.Test
 	public void testInstrumentalistP() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config/applicationContext.xml");

@@ -3,7 +3,7 @@ package local.sia._2wiringbean;
 public class PoeticJuggler extends Juggler{
 
 	private Poem poem;
-	private int beanBags = 3;
+	//private int beanBags = 3;
 	
 	@Override
 	public void perform() {

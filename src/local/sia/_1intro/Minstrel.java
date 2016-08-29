@@ -1,6 +1,5 @@
 package local.sia._1intro;
 
-import org.junit.experimental.theories.Theories;
 
 public class Minstrel {
 	

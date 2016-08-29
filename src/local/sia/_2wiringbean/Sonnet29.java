@@ -8,7 +8,7 @@ public class Sonnet29 implements Poem{
 	
 	@Override
 	public void recite() {
-		System.out.println(this.LineSeparator);
+		System.out.println(LineSeparator);
 	}
 
 }

@@ -1,6 +1,7 @@
 package local.sia._7SpringMVC.test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -15,9 +16,11 @@ import local.sia.publicclass.ClassContainStatic;
 
 public class HomeControllerTest {
 	
+	private Set<Spittle> expectedSpittles;
+
 	@Test
 	public void shouldDisplayRecentSpittles() {
-		Set<Spittle> expectedSpittles = null;
+		expectedSpittles = new HashSet<>();
 		expectedSpittles.add(new Spittle());
 		expectedSpittles.add(new Spittle());
 		expectedSpittles.add(new Spittle());

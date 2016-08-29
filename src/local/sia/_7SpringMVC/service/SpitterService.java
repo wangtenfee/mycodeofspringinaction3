@@ -8,6 +8,7 @@ import local.sia._7SpringMVC.dao.Spittle;
 public class SpitterService {
 
 	public Set<Spittle> getRecentSpittles(int num) {
+		
 		return null;
 	}
 	

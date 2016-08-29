@@ -3,10 +3,8 @@ package local.sia._4AspectOrientedSpring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import local.sia._2wiringbean.Performer;
-import local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Magician;
 import local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.MindReader;
 import local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Thinker;
-import local.sia._4AspectOrientedSpring._433PassingParameterstoAdvice.Volunteer;
 
 public class Test {
 	
