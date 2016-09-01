@@ -1,5 +1,5 @@
-/bin/
-/target/
+bin/
+target/
 .settings
 .project
 .pydevproject
@@ -7,5 +7,4 @@
 *~
 *bak
 .svn
-gen-java
-gen-py
+*.class
