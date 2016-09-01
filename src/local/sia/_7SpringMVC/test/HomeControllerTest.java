@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
 import org.junit.Test;
 
 import local.sia._7SpringMVC.controller.HomeController;
-import local.sia._7SpringMVC.dao.Spittle;
+import local.sia._7SpringMVC.domain.Spittle;
 import local.sia._7SpringMVC.service.SpitterService;
 import local.sia.publicclass.ClassContainStatic;
 
