@@ -213,5 +213,37 @@
 		    <artifactId>tiles-jsp</artifactId>
 		    <version>3.0.7</version>
 		 </dependency>
+		 
+		 <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>3.0-alpha-1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
+		<dependency>
+		    <groupId>javax.servlet.jsp.jstl</groupId>
+		    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+		    <version>1.2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+		<dependency>
+		    <groupId>javax.servlet.jsp.jstl</groupId>
+		    <artifactId>jstl-api</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
+		<dependency>
+		    <groupId>org.apache.taglibs</groupId>
+		    <artifactId>taglibs-standard-spec</artifactId>
+		    <version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.geronimo.bundles/jstl -->
+		<dependency>
+		    <groupId>org.apache.geronimo.bundles</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2_1</version>
+		</dependency>
+		
+		
 	</dependencies>
 </project>
