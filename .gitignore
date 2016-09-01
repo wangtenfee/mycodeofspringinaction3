@@ -1,2 +1,11 @@
 /bin/
 /target/
+.settings
+.project
+.pydevproject
+.classpath
+*~
+*bak
+.svn
+gen-java
+gen-py
