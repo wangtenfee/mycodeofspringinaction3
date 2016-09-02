@@ -27,6 +27,7 @@
 	</build>
 	<properties>
 		<org.springframework.version>3.0.6.RELEASE</org.springframework.version>
+		<slf4j.version>1.6.6</slf4j.version>
 	</properties>
 
 	<dependencies>
@@ -198,20 +199,26 @@
 	    </dependency>
 	    
 	    <!-- apache tiles -->
+	    <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-core</artifactId>
+		    <version>2.2.2</version>
+		</dependency>
 	    <dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-extras</artifactId>
-		    <version>3.0.7</version>
+		    <version>2.2.2</version>
 	  	</dependency>
 	  	<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
-			<version>3.0.7</version>
+			<version>2.2.2</version>
 		 </dependency>
 		 <dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-jsp</artifactId>
-		    <version>3.0.7</version>
+		    <version>2.2.2</version>
 		 </dependency>
 		 
 		 <dependency>
@@ -243,7 +250,56 @@
 		    <artifactId>jstl</artifactId>
 		    <version>1.2_1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-jdk14</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+ 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>	
+		<!-- https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>jcl-over-slf4j</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>	
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>6.0.3</version>
+		</dependency>
+		
+
 		
 	</dependencies>
 </project>

@@ -89,3 +89,7 @@ insert into t_spittle (spitter_id, spittleText, postedTime) values (2, 'Trying o
 insert into t_spittle (spitter_id, spittleText, postedTime) values (1, 'Who''s going to SpringOne/2GX this year?', '2010-06-19');
 
 ALTER TABLE t_spittle  modify lastmodifytime DATETIME;
+--201609021508
+alter table t_spittle add column  isdelete boolean not null default false;
+alter table t_spittle drop column  lastmodifytime;
+

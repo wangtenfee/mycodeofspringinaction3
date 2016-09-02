@@ -1,10 +1,11 @@
-package local.sia._7SpringMVC.domain;
+package local.sia._7SpringMVC.dao.domain;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
+
+
 public class Spitter {
 	
+	private long id;
 	private String username;
 	private String password;
 	private String fullname;
@@ -12,6 +13,13 @@ public class Spitter {
 	private boolean update_by_email;
 	
 	
+
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getEmail() {
 		return email;
 	}

@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
 import org.junit.Test;
 
 import local.sia._7SpringMVC.controller.HomeController;
-import local.sia._7SpringMVC.domain.Spittle;
+import local.sia._7SpringMVC.dao.domain.Spittle;
 import local.sia._7SpringMVC.service.SpitterService;
 import local.sia.publicclass.ClassContainStatic;
 
@@ -20,7 +20,7 @@ public class HomeControllerTest {
 
 	@Test
 	public void shouldDisplayRecentSpittles() {
-		expectedSpittles = new HashSet<>();
+		expectedSpittles = new HashSet<Spittle>();
 		expectedSpittles.add(new Spittle());
 		expectedSpittles.add(new Spittle());
 		expectedSpittles.add(new Spittle());

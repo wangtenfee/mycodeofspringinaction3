@@ -4,7 +4,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import local.sia._7SpringMVC.domain.Spittle;
+import local.sia._7SpringMVC.dao.domain.Spittle;
 
 @Service
 public class SpitterService {
