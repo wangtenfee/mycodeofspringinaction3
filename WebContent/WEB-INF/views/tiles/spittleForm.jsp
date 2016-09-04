@@ -1,12 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-</body>
-</html>
+<div>
+     
+  <!--<start id="securityAuthorizeTag_access"/>--> 
+	<sec:authorize access="hasRole('ROLE_SPITTER')">
+	<!--<co id="co_renderForRoleSpitter"/>-->
+    <s:url value="/spittles" var="spittle_url" />
+	  <sf:form modelAttribute="spittle" 
+	             method="POST" 
+	             action="${spittle_url}">
+	    <sf:label path="text"><s:message code="label.spittle" 
+                         text="Enter spittle:"/></sf:label>
+	    <sf:textarea path="text" rows="2" cols="40" />  
+	        <sf:errors path="text" />
+	        
+	    <br/>
+	    <div class="spitItSubmitIt">
+	      <input type="submit" value="Spit it!" 
+	           class="status-btn round-btn disabled" />
+	    </div>           
+	  </sf:form>
+	</sec:authorize>
+  <!--<end id="securityAuthorizeTag_access"/>--> 
+</div>
