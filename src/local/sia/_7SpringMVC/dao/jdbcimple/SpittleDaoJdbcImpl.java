@@ -1,4 +1,4 @@
-package local.sia._7SpringMVC.dao.jtimple;
+package local.sia._7SpringMVC.dao.jdbcimple;
 
 import java.util.List;
 
@@ -11,8 +11,9 @@ import org.springframework.stereotype.Repository;
 
 import local.sia._7SpringMVC.dao.domain.Spittle;
 import local.sia._7SpringMVC.dao.inter.SpittleDao;
-@Repository
-public class SpittleDaoJTimpl implements SpittleDao{
+
+@Repository("spittleDaoJdbcImpl")
+public class SpittleDaoJdbcImpl implements SpittleDao{
 	
 	@Inject
 	private JdbcTemplate jdbcTemplate;
@@ -53,7 +54,7 @@ public class SpittleDaoJTimpl implements SpittleDao{
 
 	@Override
 	public List<Spittle> getSpittlesByOwnid(long spitter_id) {
-		String sql = "select * from t_spittle s where s.delete != false and s.spitter_id=?";
+		String sql = "select * from t_spittle s where s.isdelete = false and s.spitter_id=?";
 		return jdbcTemplate.query(sql, new Object[]{spitter_id}, new BeanPropertyRowMapper<Spittle>(Spittle.class));
 	}
 

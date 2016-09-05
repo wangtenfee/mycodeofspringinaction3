@@ -1,4 +1,4 @@
-package local.sia._7SpringMVC.dao.jtimple;
+package local.sia._7SpringMVC.dao.jdbcimple;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import local.sia._7SpringMVC.dao.domain.Spitter;
 import local.sia._7SpringMVC.dao.inter.SpitterDao;
 
-@Repository
-public class SpitterDaoJTimpl implements SpitterDao{
+@Repository("spitterDaoJdbcImpl")
+public class SpitterDaoJdbcImpl implements SpitterDao{
 
 	private static final String SQL_INSERT_SPITTER = "insert into t_spitter (username, password, fullname, email, update_by_email) values (?, ?, ?, ?, ?)";
 
