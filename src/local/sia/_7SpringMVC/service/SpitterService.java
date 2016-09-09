@@ -30,4 +30,8 @@ public class SpitterService {
 	public Spitter getSpitterByName(String username) {
 		return spitterDaoJdbc.getSpitterByUsername(username); 
 	}
+	
+	public void saveSpitter(Spitter spitter){
+		spitterDaoJdbc.addSpitter(spitter);
+	}
 }

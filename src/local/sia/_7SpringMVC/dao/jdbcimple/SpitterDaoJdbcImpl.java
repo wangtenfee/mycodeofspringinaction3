@@ -19,7 +19,7 @@ public class SpitterDaoJdbcImpl implements SpitterDao{
 	private static final String SQL_UPDATE_SPITTER = "update t_spitter set username = ?, password = ?, fullname = ?, set email=?"
 			+ "where id = ?";
 
-	private static final String SQL_SELECT_SPITTER = "" + "select id, username, password, fullname from t_spitter";
+	private static final String SQL_SELECT_SPITTER = "" + "select * from t_spitter";
 
 	private static final String SQL_SELECT_SPITTER_BY_ID = SQL_SELECT_SPITTER + " where id=?";
 	
@@ -53,7 +53,8 @@ public class SpitterDaoJdbcImpl implements SpitterDao{
 	            spitter.getPassword(),
 	            spitter.getFullname(), 
 	            spitter.getEmail(),
-	            spitter.getId());		
+	            spitter.getId()
+	            );		
 	}
 
 	@Override
