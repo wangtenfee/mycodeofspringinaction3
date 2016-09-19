@@ -213,11 +213,11 @@
 		    <version>${org.springframework.version}</version>
 		</dependency>
 	    	 
-		 <dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>servlet-api</artifactId>
-		    <version>3.0-alpha-1</version>
-		</dependency>
+<!-- 		 <dependency> -->
+<!-- 		    <groupId>javax.servlet</groupId> -->
+<!-- 		    <artifactId>servlet-api</artifactId> -->
+<!-- 		    <version>3.0-alpha-1</version> -->
+<!-- 		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
 		<dependency>
 		    <groupId>javax.servlet.jsp.jstl</groupId>
@@ -260,6 +260,12 @@
 		    <groupId>commons-dbcp</groupId>
 		    <artifactId>commons-dbcp</artifactId>
 		    <version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>

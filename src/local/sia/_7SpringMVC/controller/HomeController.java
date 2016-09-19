@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import local.sia._7SpringMVC.service.SpitterService;
-import local.sia.publicclass.ClassContainStatic;
+import local.sia.util.ClassContainStatic;
 
 @Controller
 public class HomeController {

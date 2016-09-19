@@ -1,14 +1,20 @@
 package local.sia._7SpringMVC.dao.domain;
 
-
-
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class Spitter {
 	
 	private long id;
+	@Size(min=3, max=20, message="Username must be between 3 and 20 characters long.")
+	@Pattern(regexp="^[a-zA-Z0-9]+$",message="Username must be alphanumeric with no spaces")
 	private String username;
+	@Size(min=6, max=20,message="The password must be at least 6 characters long.")
 	private String password;
+	@Size(min=3, max=50, message="Your full name must be between 3 and 50 characters long.")
 	private String fullname;
+	
+	@Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",message="Invalid email address.")
 	private String email;
 	private boolean update_by_email;
 	
@@ -32,6 +38,7 @@ public class Spitter {
 	public void setUpdate_by_email(boolean update_by_email) {
 		this.update_by_email = update_by_email;
 	}
+
 	public String getUsername() {
 		return username;
 	}
