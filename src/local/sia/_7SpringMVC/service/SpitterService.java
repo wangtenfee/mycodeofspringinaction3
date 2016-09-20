@@ -34,4 +34,6 @@ public class SpitterService {
 	public void saveSpitter(Spitter spitter){
 		spitterDaoJdbc.addSpitter(spitter);
 	}
+	
+	
 }

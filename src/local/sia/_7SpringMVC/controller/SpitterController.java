@@ -5,11 +5,8 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
-import org.apache.catalina.connector.Request;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,13 +41,8 @@ public class SpitterController {
 	public String listSpittlesForSpitter(@RequestParam("spitter") String username, Model model) {
 		Spitter spitter = spitterService.getSpitterByName(username);
 		model.addAttribute(spitter);
-//System.out.println(spitter.getUsername());
 		List<Spittle> spittleList = spittleService.getSpittlesBySpitter(spitter);
-		model.addAttribute(spittleService.getSpittlesBySpitter(spitter));
-/*System.out.println(spittleList.size());
-for(Spittle spittle:spittleList){
-	System.out.println(spittle.getSpittleText());
-}*/
+		model.addAttribute(spittleList);
 		return "spittles/list";
 	}
 	
@@ -65,7 +57,9 @@ for(Spittle spittle:spittleList){
 		if (bindingResult.hasErrors()) {
 			return "spitters/edit";
 		}
+		
 		spitterService.saveSpitter(spitter);
+		
 		
 		try {
 			if (!image.isEmpty()) {
@@ -99,7 +93,6 @@ for(Spittle spittle:spittleList){
 	@RequestMapping(value = "/{username}", method = RequestMethod.GET)
 	public String showSpitterProfile(@PathVariable String username, Model model) {
 		model.addAttribute(spitterService.getSpitterByName(username));
-		System.out.println(spitterService.getSpitterByName(username).getFullname());
 		return "spitters/view";
 	}
 }

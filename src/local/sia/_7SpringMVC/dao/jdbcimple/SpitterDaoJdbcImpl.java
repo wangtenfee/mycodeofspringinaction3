@@ -44,6 +44,7 @@ public class SpitterDaoJdbcImpl implements SpitterDao{
 				spitter.getFullname(),
 				spitter.getEmail(),
 				spitter.isUpdate_by_email());
+		spitter.setId(queryForIdentity());
 	}
 
 	@Override
@@ -75,4 +76,7 @@ public class SpitterDaoJdbcImpl implements SpitterDao{
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Spitter>(Spitter.class));
 	}
 
+	private long queryForIdentity() {
+		return jdbcTemplate.queryForLong("SELECT LAST_INSERT_ID()");
+	}
 }

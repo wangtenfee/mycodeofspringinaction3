@@ -1,7 +1,3 @@
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<div>
-	<h2>Create a free Spitter account</h2>
-	<sf:form method="POST" modelAttribute="spitter">
-		
-	</sf:form>
-</div>
+<h2>Spitter</h2>
+<h3>${spitter.username}</h3>
+<p>${spitter.fullname}</p>

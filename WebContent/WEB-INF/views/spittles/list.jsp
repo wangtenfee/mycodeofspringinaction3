@@ -7,7 +7,7 @@
 <%-- 			<h2>Spittles for ${spittle.spittleText}</h2> --%>
 			<tr>
 				<td><img
-					src="<s:url value="/resources/images/spitter_avatar.png"/>"
+					src="<s:url value="/resources/${spitter.id}.jpg"/>"
 					width="48" height="48" /></td>
 				<td><a
 					href="<s:url value="/spitters/${spittle.spitter_id}"/>">
