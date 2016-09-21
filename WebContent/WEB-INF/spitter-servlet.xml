@@ -17,6 +17,8 @@
  	<mvc:resources mapping="/resources/**" location="/resources/" /> 
 	<mvc:annotation-driven/>
 	<context:component-scan	base-package="local.sia._7SpringMVC"></context:component-scan>
+	<context:component-scan	base-package="local.sia._9SecuringSpring"></context:component-scan>
+	
 	<bean id="dataSource" 	class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/myweibo?serverTimezone=UTC" />

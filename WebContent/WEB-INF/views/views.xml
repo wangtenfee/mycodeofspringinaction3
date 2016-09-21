@@ -8,7 +8,8 @@
 		<put-attribute name="top"
 			value="/WEB-INF/views/tiles/spittleForm.jsp" />
 		<put-attribute name="side"
-			value="/WEB-INF/views/tiles/signinsignup.jsp" />
+			value="" />
+<!-- 			value="/WEB-INF/views/tiles/signinsignup.jsp" /> -->
 	</definition>
 	<!--<end id="tile_template"/> -->
 
@@ -17,12 +18,6 @@
 		<put-attribute name="content" value="/WEB-INF/views/home.jsp" />
 	</definition>
 	<!--<end id="tile_home"/> -->
-
-	<definition name="login" extends="template">
-		<put-attribute name="content" value="/WEB-INF/views/login.jsp" />
-		<put-attribute name="side"
-			value="/WEB-INF/views/tiles/alreadyamember.jsp" />
-	</definition>
 
 	<definition name="admin" extends="template">
 		<put-attribute name="content" value="/WEB-INF/views/admin.jsp" />
@@ -39,5 +34,9 @@
 	<definition name="spitters/view" extends="template">
 		<put-attribute name="content" value="/WEB-INF/views/spitters/view.jsp" />
 	</definition>
+	
+	<definition name="login" extends="template">
+		<put-attribute name="content" value="/WEB-INF/login.jsp" />
+	</definition>	
 	
 </tiles-definitions>

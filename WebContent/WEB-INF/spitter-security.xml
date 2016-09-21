@@ -6,6 +6,20 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 	">
+
+	<beans:import resource="spitter-security-inmemory.xml"/>
+
+	<http use-expressions="true">
+		<form-login login-processing-url="/static/j_spring_security_check"
+			login-page="/login" authentication-failure-url="/login?login_error=t" />
+	</http>
+
+	<!--<start id="authentication_manager"/> -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userService" />
+	</authentication-manager>
+	<!--<end id="authentication_manager"/> -->
+	
 	
 	
 </beans:beans>
