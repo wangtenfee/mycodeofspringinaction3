@@ -2,16 +2,28 @@
 <beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns="http://www.springframework.org/schema/security" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 	">
 
-	<beans:import resource="spitter-security-inmemory.xml"/>
+	<beans:import resource="datasource.xml"/>	
+<!-- 	<beans:import resource="spitter-security-inmemory.xml"/> -->
+	<beans:import resource="spitter-security-jdbc.xml"/>
+<!-- 	<jdbc-user-service id="userService" data-source-ref="dataSource" -->
+<!-- 		users-by-username-query="select username, password, true from t_spitter where usernamex=?" -->
+<!-- 		authorities-by-username-query="select username,'ROLE_SPITTER' from t_spitter where usernamex=?" /> -->
 
-	<http use-expressions="true">
-		<form-login login-processing-url="/static/j_spring_security_check"
-			login-page="/login" authentication-failure-url="/login?login_error=t" />
+	<http auto-config="true" use-expressions="true"> <!-- use-expressions="true"表示启用SpEL -->
+<!-- 	    <intercept-url pattern="/**" requires-channel="https"/> -->
+
+		<!-- spring security拦截请求 filter在dispatch servlet之前执行 只有合适权限的用户才能访问，没有合适权限就会报404 -->
+<!-- 		<intercept-url pattern="/admin/**" access="ROLE_ADMIN" /> 等同于-->
+	<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/> 
+		<!-- 不仅限制权限还限制了IP，不过在应用服务器内部限制IP这种方式使用很少 <intercept-url pattern="/admin/**" 
+			access="hasRole('ROLE_ADMIN') and hasIpAddress('192.168.1.2')"/> -->
+<!-- 		<intercept-url pattern="/**" access="ROLE_SPITTER" /> -->
+<!-- 		<form-login login-processing-url="/static/j_spring_security_check" -->
+<!-- 			login-page="/login" authentication-failure-url="/login?login_error=t" /> -->
 	</http>
 
 	<!--<start id="authentication_manager"/> -->
