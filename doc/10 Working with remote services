@@ -1,0 +1,8 @@
+Remote Method Invocation (RMI) Accessing/exposing Java-based services when network constraints such as firewalls aren’t a factor
+要求两边都是java应用，没有防火墙的问题，适用于内网中，且客服两边都是java应用。
+Hessian or Burlap Accessing/exposing Java-based services over HTTP when network constraints are a factor
+要求客服两边都是java应用,防火墙不再是问题，适用于广域网，且客服两边都是java应用。
+HTTP invoker Accessing/exposing Spring-based services when network constraints are a factor and you desire Java serialization over XML or proprietary serialization
+spring 自己的远程调用，要求客服两边都是java应用。
+JAX-RPC and JAX-WS Accessing/exposing platform-neutral, SOAP-based web services
+jcp的标准 与平台无关，不要求客服两边都是java应用。
